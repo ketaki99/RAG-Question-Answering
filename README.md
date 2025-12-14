@@ -6,19 +6,6 @@ This project uses LangChain, FAISS, HuggingFace embeddings, and OpenAI to retrie
 
 ---
 
-## Demo
-
-### Home Screen
-![Home Screen](screenshots/ss-1.png)
-
-### Question Answering Example (Python)
-![Python Question](screenshots/ss-2.png)
-
-### Question Answering Example (TypeScript)
-![TypeScript Question](screenshots/ss-3.png)
-
----
-
 ## How it Works
 
 1. FAQs are loaded from a CSV file
@@ -39,9 +26,24 @@ This project uses LangChain, FAISS, HuggingFace embeddings, and OpenAI to retrie
 
 ---
 
+## Demo
+
+### Home Screen
+![Home Screen](screenshots/ss-1.png)
+
+### Question Answering Example (Python)
+![Python Question](screenshots/ss-2.png)
+
+### Question Answering Example (TypeScript)
+![TypeScript Question](screenshots/ss-3.png)
+
+---
+
 ## Setup
 
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/codebasics-qa.git
 cd codebasics-qa
+
+
