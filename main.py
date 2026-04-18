@@ -1,12 +1,19 @@
 import streamlit as st
 from langchain_helper import get_qa_chain, create_vector_db
 
-st.title("Codebasics Q&A 🌱")
-btn = st.button("Create Knowledgebase")
+st.set_page_config(page_title="Codebasics FAQ Assistant", page_icon="📚")
+
+st.title("Codebasics FAQ Assistant")
+st.caption(
+    "Retrieval-augmented question answering over the Codebasics FAQ corpus."
+)
+
+btn = st.button("Rebuild knowledge base")
 if btn:
     create_vector_db()
+    st.success("Knowledge base rebuilt from codebasics_faqs.csv")
 
-question = st.text_input("Question: ")
+question = st.text_input("Ask a question about Codebasics")
 
 if question:
     chain = get_qa_chain()
@@ -14,3 +21,10 @@ if question:
 
     st.header("Answer")
     st.write(response["result"])
+
+    sources = response.get("source_documents", [])
+    if sources:
+        st.subheader("Retrieved context")
+        for index, doc in enumerate(sources[:3], start=1):
+            st.markdown(f"**Chunk {index}**")
+            st.write(doc.page_content)
