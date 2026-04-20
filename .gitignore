@@ -1,4 +1,7 @@
 .env
 .venv
+.env.local
 .DS_Store
 faiss_index/
+__pycache__/
+*.py[cod]

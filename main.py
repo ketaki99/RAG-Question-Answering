@@ -1,11 +1,11 @@
 import streamlit as st
 from langchain_helper import get_qa_chain, create_vector_db
 
-st.set_page_config(page_title="Codebasics FAQ Assistant", page_icon="📚")
+st.set_page_config(page_title="RAG FAQ Assistant", page_icon="📚")
 
-st.title("Codebasics FAQ Assistant")
+st.title("RAG FAQ Assistant")
 st.caption(
-    "Retrieval-augmented question answering over the Codebasics FAQ corpus."
+    "Retrieval-augmented QA system using FAISS, LangChain, Instructor embeddings, and OpenAI."
 )
 
 btn = st.button("Rebuild knowledge base")
@@ -13,7 +13,7 @@ if btn:
     create_vector_db()
     st.success("Knowledge base rebuilt from codebasics_faqs.csv")
 
-question = st.text_input("Ask a question about Codebasics")
+question = st.text_input("Ask a question about the Codebasics FAQ knowledge base")
 
 if question:
     chain = get_qa_chain()
